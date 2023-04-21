@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
+    'remotica'
 ]
 
 MIDDLEWARE = [
@@ -60,7 +61,7 @@ ROOT_URLCONF = 'remotica.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,13 +82,14 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
-'''
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     )
 }
+'''
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

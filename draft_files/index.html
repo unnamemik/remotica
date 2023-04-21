@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>REMOTICA</title>
+</head>
+<body>
+    <h2>User form</h2>
+    <form method="post" action="postuser/">
+        {% csrf_token %}
+        <p>Command:<br> <input name="command" /></p>
+        <p>Token:<br> <input name="token" type="number" /></p>
+        <input type="submit" value="Send" />
+    </form>
+      <ul class="sidebar-nav">
+   {% if user.is_authenticated %}
+     <li>User: {{ user.get_username }}</li>
+     <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+   {% else %}
+     <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+   {% endif %}
+  </ul>
+    <form action = "start/" method = "post">
+        {% csrf_token %}
+         <input type="submit" name="start_server" value="Start server"/>
+    </form>
+
+</body>
+</html>

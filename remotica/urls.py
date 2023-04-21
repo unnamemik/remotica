@@ -13,12 +13,20 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from urllib import request
+
 from django.contrib import admin
 from django.urls import path, include
 
+from remotica import views
+from remotica.templates import start_server
+
 urlpatterns = [
-    path('', serverSock.startServer),
+    path('', views.index, name='index'),
     path('admin/', admin.site.urls),
-    path('auth/', include('djoser.urls')),
-    path('auth/', include('djoser.urls.authtoken')),
+    #path('auth/', include('djoser.urls')),
+    #path('auth/', include('djoser.urls.authtoken')),
+    path('postuser/', views.postuser),
+    path('start/', start_server.start_server),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
