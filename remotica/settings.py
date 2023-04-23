@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
-    'remotica'
+    'remotica',
+    'profile'
 ]
 
 MIDDLEWARE = [

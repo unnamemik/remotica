@@ -2,10 +2,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.http import HttpResponse
 
-@login_required
 def index(request):
     return render(request, "index.html")
-
 
 
 @login_required
@@ -15,3 +13,9 @@ def postuser(request):
     return HttpResponse(f"<h2>Command: {command}   Token: {token}</h2>")
 
 
+@login_required
+def content(request):
+    return render(request, 'content.html')
+
+def about(request):
+    return render(request, 'about.html')
