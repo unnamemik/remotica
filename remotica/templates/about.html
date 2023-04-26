@@ -39,7 +39,7 @@
                         <a href="{% url 'profile' %}" class="nav-item nav-link">Профиль</a>
                         <a href="{% url 'about' %}" class="nav-item nav-link">Об авторе</a>
                     </div>
-                    <div class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">
+                    <div class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block" style="min-width: 200px">
                        {% if user.is_authenticated %}
                            <span>User: {{ user.get_username }}</span> - <span><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></span>
                        {% else %}
@@ -75,19 +75,19 @@
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                         <p class="section-title text-secondary">Прогресс<span></span></p>
                         <h1 class="mb-5">Стадия выполнения дипломной работы</h1>
-                        <p class="mb-4">По общему состоянию концепции, по написанному коду и по написанному тексту дипломной работы</p>
+                        <p class="mb-4">Общее состояние готовности проекта на текущий момент</p>
                         <div class="skill mb-4">
                             <div class="d-flex justify-content-between">
-                                <p class="mb-2">Стадия проектирования</p>
-                                <p class="mb-2">75%</p>
+                                <p class="mb-2">Реализация</p>
+                                <p class="mb-2">60%</p>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                         <div class="skill mb-4">
                             <div class="d-flex justify-content-between">
-                                <p class="mb-2">Стадия выполнения</p>
+                                <p class="mb-2">Код и контент</p>
                                 <p class="mb-2">50%</p>
                             </div>
                             <div class="progress">
@@ -96,7 +96,7 @@
                         </div>
                         <div class="skill mb-4">
                             <div class="d-flex justify-content-between">
-                                <p class="mb-2">В тексте</p>
+                                <p class="mb-2">Текст дипломной работы</p>
                                 <p class="mb-2">10%</p>
                             </div>
                             <div class="progress">
@@ -112,6 +112,47 @@
             </div>
         </div>
         <!-- About End -->
+
+     <!-- Testimonial Start -->
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <p class="section-title text-secondary justify-content-center"><span></span>Другие проекты автора<span></span></p>
+                <h1 class="text-center mb-5">Галерея проектов</h1>
+                <div class="owl-carousel testimonial-carousel">
+                    <div class="testimonial-item bg-light rounded my-4">
+                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{% static '/img/testimonial-1.jpg' %}" style="width: 65px; height: 65px;">
+                            <div class="ps-4">
+                                <h5 class="mb-1">APP Name1</h5>
+                                <span>Profession</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-light rounded my-4">
+                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{% static '/img/testimonial-2.jpg' %}" style="width: 65px; height: 65px;">
+                            <div class="ps-4">
+                                <h5 class="mb-1">APP Name2</h5>
+                                <span>Profession</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-light rounded my-4">
+                        <p class="fs-5"><i class="fa fa-quote-left fa-4x text-primary mt-n4 me-3"></i>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit sed stet lorem sit clita duo justo.</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{% static '/img/testimonial-3.jpg' %}" style="width: 65px; height: 65px;">
+                            <div class="ps-4">
+                                <h5 class="mb-1">APP Name3</h5>
+                                <span>Profession</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
 
         <!-- Footer Start -->
         <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
@@ -130,7 +171,7 @@
                         <a class="btn btn-link" href="{% url 'about' %}">Об авторе</a>
                     </div>
                     <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Gallery<span></span></p>
+                        <p class="section-title text-white h5 mb-4">Галерея<span></span></p>
                         <div class="row g-2">
                             <div class="col-4">
                                 <img class="img-fluid" src="{%  static '/img/portfolio-1.jpg' %}" alt="Image">

@@ -69,3 +69,44 @@
 </div>
 </body>
 </html>
+
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container-xxl bg-primary hero-header">
+<div class="col-lg-6 text-center text-lg-start" style="margin-left: 100px">
+
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <h1 class="text-white mb-4 animated slideInDown">Please login to see this page.</h1>
+    {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+<table class="text-white pb-3 animated slideInDown" style="border-collapse: separate; border-spacing: 10px 10px">
+<tr>
+    <td>{{ form.username.label_tag }}</td>
+    <td>{{ form.username }}</td>
+</tr>
+<tr>
+    <td>{{ form.password.label_tag }}</td>
+    <td>{{ form.password }}</td>
+</tr>
+</table>
+<br>
+<input style="width: 200px" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft" type="submit" value="login">
+<input style="width: 200px" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight" type="hidden" name="next" value="{{ next }}">
+</form>
+<br>
+<br>
+{# Assumes you setup the password_reset view in your URLconf #}
+<p><a style="width: 200px" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight" href="{% url 'password_reset' %}">Lost password?</a></p>
+</div>
+</div>
+{% endblock %}

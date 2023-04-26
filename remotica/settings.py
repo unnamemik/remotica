@@ -62,7 +62,7 @@ ROOT_URLCONF = 'remotica.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates/'],
+        'DIRS': ['templates', 'remotica/templates', 'diploma/templates', 'profile/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
