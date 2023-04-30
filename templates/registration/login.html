@@ -1,8 +1,13 @@
 {% extends "base_generic.html" %}
+{% load static %}
 
-{% block content %}
+{% block slider %}
+
+    {% block login %}
+    {% endblock login %}
 <div class="container-xxl bg-primary hero-header">
 <div class="col-lg-6 text-center text-lg-start" style="margin-left: 100px">
+
 {% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
@@ -37,4 +42,29 @@
 <p><a style="width: 200px" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight" href="{% url 'password_reset' %}">Lost password?</a></p>
 </div>
 </div>
-{% endblock %}
+
+ {% block future %}
+    {% endblock future %}
+
+    {% block slider_small %}
+    {% endblock slider_small %}
+
+    {% block about %}
+    {% endblock about %}
+
+    {% block facts %}
+    {% endblock facts %}
+
+    {% block content %}
+    {% endblock content %}
+
+    {% block testimonials %}
+    {% endblock testimonials %}
+
+    {% block footer %}
+    {% endblock footer %}
+
+    {% block back_to_top %}
+    {% endblock back_to_top %}
+
+{% endblock slider%}

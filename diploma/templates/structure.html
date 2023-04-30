@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Content</title>
-</head>
-<body>
+{% extends "base_generic.html" %}
 
-</body>
-</html>
+{% load static %}
+    {% block title %}<title>Структура диплома</title>{% endblock title%}
+
+    {% block slider %}
+    {% endblock slider %}
+
+    {% block slider_small_txt_p %}<p class="text-white pb-3 animated slideInDown">Структура дипломной работы{% endblock slider_small_txt_p %}
+
+    {% block about %}
+    {% endblock about %}
+
+    {% block facts %}
+    {% endblock facts %}
+
+    {% block content %}
+    {% endblock content %}
+
+    {% block testimonials %}
+    {% endblock testimonials %}
+
+    {% block propertys %}
+        <div class="container py-5 px-lg-5">
+            <i class="fa fa-3x fa-regular fa-sitemap text-primary mb-4"></i>
+            <h5 class="mb-3" style="font-weight: bold !important">Презентация проекта</h5>
+            <p class="m-0" style="font-weight: bold">Управление устройствами по сети с применением пользовательского программирования</p>
+        </div>
+        <div class="diploma_chapters_normal">
+           {% include  'structure-content.html' %}
+        </div>
+    {% endblock propertys %}

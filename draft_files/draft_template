@@ -1,0 +1,37 @@
+{% load static %}
+{% block head %}
+        {% block title %} {% endblock title %}
+{% endblock head %}
+
+{% block body %}
+
+    {% block header %}
+        {% block navmenu %}
+        {% endblock navmenu %}
+
+        {% block slider %}
+        {% endblock slider %}
+    {% endblock header %}
+
+    {% block future %}
+    {% endblock future %}
+
+    {% block about %}
+    {% endblock about %}
+
+    {% block facts %}
+    {% endblock facts %}
+
+    {% block content %}
+    {% endblock content %}
+
+    {% block testimonials %}
+    {% endblock testimonials %}
+
+    {% block footer %}
+    {% endblock footer %}
+
+    {% block back_to_top %}
+    {% endblock back_to_top %}
+
+{% endblock body %}

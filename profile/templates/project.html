@@ -1,223 +1,42 @@
 {% extends "base_generic.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-</head>
+{% load static %}
+    {% block title %}<title>Устройства</title>{% endblock title%}
 
-{% block content %}
-<body>
-    <div class="container-xxl bg-white p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
+    {% block slider %}
+    {% endblock slider %}
+
+    {% block slider_small_txt_p %}<p class="text-white pb-3 animated slideInDown">Центр управления{% endblock slider_small_txt_p %}
 
 
-        <!-- Navbar & Hero Start -->
-        <div class="container-xxl position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="{% url 'index' %}" class="navbar-brand p-0">
-                    <h1 class="m-0">FirstProjects.ru</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav mx-auto py-0">
-                        <a href="{% url 'index' %}" class="nav-item nav-link active">Главная</a>
-                        <a href="{% url 'content' %}" class="nav-item nav-link">Содержание</a>
-                        <a href="{% url 'profile' %}" class="nav-item nav-link">Профиль</a>
-                        <a href="{% url 'about' %}" class="nav-item nav-link">Об авторе</a>
-                    </div>
-                    <div class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">
-                       {% if user.is_authenticated %}
-                           <span>User: {{ user.get_username }}</span> - <span><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></span>
-                       {% else %}
-                         <a href="{% url 'login'%}?next={{request.path}}">Login</a>
-                       {% endif %}
-                    </div>
-                </div>
-            </nav>
-
-            <div class="container-xxl bg-primary hero-header">
-                <div class="container px-lg-5">
-                    <div class="row g-5 align-items-end">
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="text-white mb-4 animated slideInDown">Дипломная работа</h1>
-                            <p class="text-white pb-3 animated slideInDown">Управление устройствами по сети с применением пользовательского программирования</p>
-                            <a href="{% url 'content' %}" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Содержание работы</a>
-                            <a href="{% url 'profile' %}" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Профиль управления</a>
-                        </div>
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <img class="img-fluid animated zoomIn" src="{% static '/img/hero.png' %}" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Navbar & Hero End -->
-
-
-        <!-- Service Start -->
+    {% block propertys %}
         <div class="container-xxl py-5">
             <div class="container py-5 px-lg-5">
-                <div class="wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="section-title text-secondary justify-content-center"><span></span>Устройства и инструкции<span></span></p>
-                    <h1 class="text-center mb-5">Центр управления</h1>
-                </div>
                 <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fa fa-search fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">SEO Optimization</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fa fa-laptop-code fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Web Design</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fab fa-facebook-f fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Social Media Marketing</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fa fa-mail-bulk fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Email Marketing</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fa fa-thumbs-up fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">PPC Advertising</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item d-flex flex-column text-center rounded">
-                            <div class="service-icon flex-shrink-0">
-                                <i class="fab fa-android fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">App Development</h5>
-                            <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                            <a class="btn btn-square" href=""><i class="fa fa-arrow-right"></i></a>
+                       <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="feature-item bg-light rounded text-center p-4">
+                            <a href="{% url 'techno' %}">
+                                <i class="fa fa-3x fa-sharp fa-solid fa-microchip text-primary mb-4"></i>
+                                <h5 class="mb-3">Технологии</h5>
+                                <p class="m-0">Подробнее о ключевых технологиях, использованных в проекте</p></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Service End -->
+    {% endblock propertys %}
 
-       <!-- Footer Start -->
-        <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Обратная связь<span></span></p>
-                        <p><i class="fab fa-telegram me-3"></i>@vtelegramme</p>
-                        <p><i class="fa fa-envelope me-3"></i>unnamemik@gmail.com</p>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Быстрые ссылки><span></span></p>
-                        <a class="btn btn-link" href="{% url 'index' %}">Главная</a>
-                        <a class="btn btn-link" href="{% url 'content' %}">Содержание</a>
-                        <a class="btn btn-link" href="{% url 'profile' %}">Профиль</a>
-                        <a class="btn btn-link" href="{% url 'about' %}">Об авторе</a>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <p class="section-title text-white h5 mb-4">Галерея<span></span></p>
-                        <div class="row g-2">
-                            <div class="col-4">
-                                <img class="img-fluid" src="{%  static '/img/portfolio-1.jpg' %}" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="{%  static '/img/portfolio-2.jpg' %}" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="{%  static '/img/portfolio-3.jpg' %}" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="{%  static '/img/portfolio-4.jpg' %}" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="{%  static '/img/portfolio-5.jpg' %}" alt="Image">
-                            </div>
-                            <div class="col-4">
-                                <img class="img-fluid" src="{%  static '/img/portfolio-6.jpg' %}" alt="Image">
-                            </div>
-                        </div>
-                    </div>
+    {% block future %}
+    {% endblock future %}
 
-                </div>
-            </div>
-            <div class="container px-lg-5">
-                <div class="copyright">
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">FirstProjects.ru</a>, All Right Reserved.
+    {% block about %}
+    {% endblock about %}
 
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                            Powered By <a class="border-bottom" href="https://github.com/unnamemik">unnamemik</a>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
+    {% block facts %}
+    {% endblock facts %}
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
+    {% block content %}
+    {% endblock content %}
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{% static '/lib/wow/wow.min.js' %}"></script>
-    <script src="{% static '/lib/easing/easing.min.js' %}"></script>
-    <script src="{% static '/lib/waypoints/waypoints.min.js' %}"></script>
-    <script src="{% static '/lib/counterup/counterup.min.js' %}"></script>
-    <script src="{% static '/lib/owlcarousel/owl.carousel.min.js' %}"></script>
-    <script src="{% static '/lib/isotope/isotope.pkgd.min.js' %}"></script>
-    <script src="{% static '/lib/lightbox/js/lightbox.min.js' %}"></script>
-
-    <!-- Template Javascript -->
-    <script src="{% static '/js/main.js' %}"></script>
-
-</body>
-</html>
-{% endblock %}
+    {% block testimonials %}
+    {% endblock testimonials %}

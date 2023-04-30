@@ -103,7 +103,7 @@ h6,
     position: relative;
     margin-right: 25px;
     padding: 35px 0;
-    font-family: 'Jost', sans-serif;
+    font-family: 'Calibri', sans-serif;
     font-size: 18px;
     font-weight: 500;
     color: var(--light) !important;
@@ -512,6 +512,7 @@ h6,
 
 /*** Footer ***/
 .footer {
+    width: fit-content;
     margin-top: 6rem;
     padding-top: 9rem;
     background:
@@ -589,4 +590,41 @@ h6,
 .footer .copyright a:hover,
 .footer .footer-menu a:hover {
     color: var(--secondary);
+}
+
+.leftimg {
+    float:left;
+    margin: 7px 7px 7px 0;
+}
+
+.rightimg  {
+float: right;
+margin: 7px 0 7px 7px;
+}
+
+.diploma_chapters_normal {
+  position: relative;
+    margin: 5px 50px 5px 50px;
+    padding: 35px 0;
+    font-family: 'Calibri', Calibri, serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(+ light);
+    outline: none;
+    transition: .5s;
+    text-align: justify;
+}
+
+.diploma_chapters_bold {
+  position: relative;
+    margin: 5px 50px 5px 50px;
+    padding: 35px 0;
+    font-family: 'Calibri', Calibri, serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(+ light);
+    outline: none;
+    transition: .5s;
+    text-align: justify;
+    font-style: oblique;
 }

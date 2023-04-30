@@ -23,5 +23,14 @@
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/profile/templates" />
+        <option value="$MODULE_DIR$/diploma/templates" />
+        <option value="$MODULE_DIR$/remotica/templates" />
+        <option value="$MODULE_DIR$/templates" />
+        <option value="$MODULE_DIR$/diploma/static/txt" />
+      </list>
+    </option>
   </component>
 </module>
