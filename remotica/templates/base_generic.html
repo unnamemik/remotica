@@ -51,7 +51,7 @@
             <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="{% url 'index' %}" class="navbar-brand p-0">
-                    <h1 class="m-0"><span>First</span><span style="color: yellow">Projects</span>.ru</h1>
+                    <h1 class="m-0"><span>First</span><span style="color: #FBA504">Projects</span>.ru</h1>
 {#                    <img src={% static "img/kotya.jpg" %} alt="Logo">#}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -85,9 +85,8 @@
                     <div class="row g-5 align-items-end">
                         <div class="col-lg-6 text-center text-lg-start">
                             {% block slider_txt_h1 %}<h1 class="text-white mb-4 animated slideInDown">Дипломная работа</h1>{% endblock slider_txt_h1 %}
-                            {% block slider_txt_p %}<p class="text-white pb-3 animated slideInDown">Управление устройствами по сети с{% endblock slider_txt_p %}
-                                применением
-                                пользовательского программирования</p>
+                            {% block slider_txt_p %}<p class="text-white pb-3 animated slideInDown">Управление устройствами по сети с
+                                применением пользовательского программирования</p>{% endblock slider_txt_p %}
                             <a href="{% url 'content' %}"
                                class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Содержание
                                 работы</a>
@@ -109,7 +108,8 @@
                 <div class="container px-lg-5">
                     <div class="row g-5 align-items-end">
                         <div class="col-lg-6 text-center text-lg-start">
-                            {% block slider_small_txt_p %}<p class="text-white pb-3 animated slideInDown">Управление устройствами по сети с{% endblock slider_small_txt_p %}
+                            <p class="text-white pb-3 animated slideInDown">Управление устройствами по сети с
+                            применением пользовательского программирования</p>
                         </div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@
                                      aria-valuemax="100"></div>
                             </div>
                         </div>
-                        <a href="{% url 'index' %}"
+                        <a href="{% url 'content' %}"
                            class="btn btn-primary py-sm-3 px-sm-5 rounded-pill mt-3">Подробнее</a>
                     </div>
                     <div class="col-lg-6">
@@ -257,10 +257,10 @@
                     <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
                         <div class="rounded overflow-hidden">
                             <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="{% static '/img/auto.jpg' %}" alt="">
+                                <img class="img-fluid w-100" src="{% static '/img/auto.png' %}" alt="">
                                 <div class="portfolio-overlay">
                                     <a class="btn btn-square btn-outline-light mx-1"
-                                       href="{% static '/img/auto.jpg' %}" data-bs-target="portfolio" target="_blank"><i
+                                       href="{% static '/img/auto.png' %}" data-bs-target="portfolio" target="_blank"><i
                                             class="fa fa-eye"></i></a>
 {#                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>#}
                                 </div>
@@ -275,7 +275,7 @@
                     <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
                         <div class="rounded overflow-hidden">
                             <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="{% static '/img/arduino.PNG' %}" alt="">
+                                <img class="img-fluid w-100" src="{% static '/img/arduino.png' %}" alt="">
                                 <div class="portfolio-overlay">
 {#                                    <a class="btn btn-square btn-outline-light mx-1"#}
 {#                                       href="{% static '/img/start.mp4' %}" data-bs-target="portfolio"><i#}
@@ -293,10 +293,10 @@
                     <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.5s">
                         <div class="rounded overflow-hidden">
                             <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="{% static '/img/nano.jpg' %}" alt="">
+                                <img class="img-fluid w-100" src="{% static '/img/nano.png' %}" alt="">
                                 <div class="portfolio-overlay">
                                     <a class="btn btn-square btn-outline-light mx-1"
-                                       href="{% static '/img/nano.jpg' %}" data-bs-target="portfolio" target="_blank"><i
+                                       href="{% static '/img/nano.png' %}" data-bs-target="portfolio" target="_blank"><i
                                             class="fa fa-eye"></i></a>
 {#                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>#}
                                 </div>
@@ -311,12 +311,12 @@
                     <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.1s">
                         <div class="rounded overflow-hidden">
                             <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="{% static '/img/python.PNG' %}" alt="">
+                                <img class="img-fluid w-100" src="{% static '/img/python.png' %}" alt="">
                                 <div class="portfolio-overlay">
 {#                                    <a class="btn btn-square btn-outline-light mx-1"#}
 {#                                       href="{% static '/img/python.mp4' %}" data-bs-target="portfolio"><i#}
 {#                                            class="fa fa-eye"></i></a>#}
-                                    <a class="btn btn-square btn-outline-light mx-1" href="{% static '/img/python.mp4' %}" target="_blank"><i class="fa fa-link"></i></a>
+                                    <a class="btn btn-square btn-outline-light mx-1" href="{% static '/img/python_clip.mp4' %}" target="_blank"><i class="fa fa-link"></i></a>
                                 </div>
                             </div>
 {#                            <div class="bg-light p-4">#}
@@ -329,10 +329,10 @@
                     <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.3s">
                         <div class="rounded overflow-hidden">
                             <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="{% static '/img/solder.jpg' %}" alt="">
+                                <img class="img-fluid w-100" src="{% static '/img/solder.png' %}" alt="">
                                 <div class="portfolio-overlay">
                                     <a class="btn btn-square btn-outline-light mx-1"
-                                       href="{% static '/img/solder.jpg' %}" data-bs-target="portfolio" target="_blank"><i
+                                       href="{% static '/img/solder.png' %}" data-bs-target="portfolio" target="_blank"><i
                                             class="fa fa-eye"></i></a>
 {#                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>#}
                                 </div>
@@ -347,10 +347,10 @@
                     <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.5s">
                         <div class="rounded overflow-hidden">
                             <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="{% static '/img/pages.jpg' %}" alt="">
+                                <img class="img-fluid w-100" src="{% static '/img/pages.png' %}" alt="">
                                 <div class="portfolio-overlay">
                                     <a class="btn btn-square btn-outline-light mx-1"
-                                       href="{% static '/img/pages.jpg' %}" data-bs-target="portfolio" target="_blank">
+                                       href="{% static '/img/pages.png' %}" data-bs-target="portfolio" target="_blank">
                                        <i class="fa fa-eye"></i></a>
 {#                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>#}
                                 </div>
@@ -377,9 +377,7 @@
                     <div class="testimonial-item bg-light rounded my-4">
                         <a href="{% static '/storage/Arrays.exe' %}"><p class="fs-5" style="text-decoration: underline"><i class="fa fa-link fa-2x text-primary mt-n4 me-3"></i>Arrays (Python)</p></a>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle"
-                                 src="{% static '/storage/Arrays.png' %}"
-                                 style="width: 65px; height: 65px;">
+                            <img class="img_tooltip" src="{% static '/storage/arrays.png' %}">
                             <div class="ps-4">
                                 <h5 class="mb-1">Все основные задачи с массивами, приложение с GUI </h5>
                             </div>
@@ -388,9 +386,7 @@
                     <div class="testimonial-item bg-light rounded my-4">
                         <a href="{% static '/storage/Tuskarora.exe' %}"><p class="fs-5" style="text-decoration: underline"><i class="fa fa-link fa-2x text-primary mt-n4 me-3"></i>Tuskarora (Java)</p></a>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle"
-                                 src="{% static '/storage/Tuskarora.png' %}"
-                                 style="width: 65px; height: auto;">
+                            <img class="img_tooltip" src="{% static '/storage/tuskarora.png' %}">
                             <div class="ps-4">
                                 <h5 class="mb-1">Программа для тестирования порта LPT (378h). Умеет слать сигналы в заданный порт с заданным интервалом.</h5>
                             </div>
@@ -399,9 +395,7 @@
                     <div class="testimonial-item bg-light rounded my-4">
                     <a href="{% static '/storage/Calculator.exe' %}"><p class="fs-5" style="text-decoration: underline"><i class="fa fa-link fa-2x text-primary mt-n4 me-3"></i>Calculator (Python)</p></a>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle"
-                                 src="{% static '/storage/Calculator.png' %}"
-                                 style="width: 65px; height: auto;">
+                            <img class="img_tooltip" src="{% static '/storage/calculator.png' %}">
                             <div class="ps-4">
                                 <h5 class="mb-1">Калькулятор, считает проценты и корень, учитывает скобки, ведет логи.</h5>
                             </div>
@@ -410,9 +404,7 @@
                     <div class="testimonial-item bg-light rounded my-4">
                         <a href="{% static '/storage/doggy.exe' %}"><p class="fs-5" style="text-decoration: underline"><i class="fa fa-link fa-2x text-primary mt-n4 me-3"></i>Doggy (C#)</p></a>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle"
-                                 src="{% static '/storage/Doggy.png' %}"
-                                 style="width: 65px; height: 65px;">
+                            <img class="img_tooltip" src="{% static '/storage/doggy.png' %}">
                             <div class="ps-4">
                                 <h5 class="mb-1">Широко известная в узких кругах задача про собаку и ее друзей.</h5>
                             </div>
@@ -421,9 +413,7 @@
                     <div class="testimonial-item bg-light rounded my-4">
                         <a href="{% static '/storage/Messenger.rar' %}"><p class="fs-5" style="text-decoration: underline"><i class="fa fa-link fa-2x text-primary mt-n4 me-3"></i>Messenger (Python)</p></a>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle"
-                                 src="{% static '/storage/Messenger.png' %}"
-                                 style="width: 65px; height: 65px;">
+                            <img class="img_tooltip" src="{% static '/storage/messenger.png' %}">
                             <div class="ps-4">
                                 <h5 class="mb-1">Мессенджер для локальных сетей. Сервер (на ведущую машину) и клиент (на остальные).</h5>
                             </div>
@@ -432,9 +422,7 @@
                     <div class="testimonial-item bg-light rounded my-4">
                         <a href="{% static '/storage/percent.exe' %}"><p class="fs-5" style="text-decoration: underline"><i class="fa fa-link fa-2x text-primary mt-n4 me-3"></i>Percent (C#)</p></a>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle"
-                                 src="{% static '/storage/percent.png' %}"
-                                 style="width: 65px; height: 65px;">
+                            <img class="img_tooltip" src="{% static '/storage/percent.png' %}">
                             <div class="ps-4">
                                 <h5 class="mb-1">Простенький но нужный калькулятор расчета обратного процента.</h5>
                             </div>
@@ -443,9 +431,7 @@
                     <div class="testimonial-item bg-light rounded my-4">
                         <a href="{% static '/storage/Phonebook.exe' %}"><p class="fs-5" style="text-decoration: underline"><i class="fa fa-link fa-2x text-primary mt-n4 me-3"></i>Phonebook (Python)</p></a>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle"
-                                 src="{% static '/storage/Phonebook.png' %}"
-                                 style="width: 65px; height: 65px;">
+                            <img class="img_tooltip" src="{% static '/storage/phonebook.png' %}">
                             <div class="ps-4">
                                 <h5 class="mb-1">Телефонная книга с базой данных на SQLite.</h5>
                             </div>
@@ -467,8 +453,8 @@
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-3">
                         <a href="{% url 'about' %}"><p class="section-title text-white h5 mb-4">Обратная связь<span></span></p></a>
-                        <p><i class="fab fa-telegram me-3"></i>@vtelegramme</p>
-                        <p><i class="fa fa-envelope me-3"></i>unnamemik@gmail.com</p>
+                        <a href="https://t.me/vtelegramme" target="_blank"><p class="text-white mb-4"><i class="fab fa-telegram me-3"></i>@vtelegramme</p></a>
+                        <a href="mailto:unnamemik@gmail.com"><p class="text-white mb-4"><i class="fa fa-envelope me-3"></i>unnamemik@gmail.com</p></a>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <a href="{% url 'index' %}"><p class="section-title text-white h5 mb-4">Быстрые ссылки><span></span></p></a>
@@ -478,25 +464,25 @@
                         <a class="btn btn-link" href="{% url 'about' %}">Об авторе</a>
                     </div>
                     <div class="col-md-6 col-lg-3">
-                        <a href="diploma/structure"><p class="section-title text-white h5 mb-4">Статьи и контент<span></span></p></a>
+                        <a href="https://firstprojects.ru/diploma/structure"><p class="section-title text-white h5 mb-4">Статьи и контент<span></span></p></a>
                         <div class="row g-2">
                             <div class="col-4">
-                                <img class="img-fluid" src="{% static '/img/arduino.PNG' %}" alt="Image">
+                                <img class="img-fluid" src="{% static '/img/arduino.png' %}" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="{% static '/img/auto.JPG' %}" alt="Image">
+                                <img class="img-fluid" src="{% static '/img/auto.png' %}" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="{% static '/img/nano.JPG' %}" alt="Image">
+                                <img class="img-fluid" src="{% static '/img/nano.png' %}" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="{% static '/img/pages.JPG' %}" alt="Image">
+                                <img class="img-fluid" src="{% static '/img/pages.png' %}" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="{% static '/img/python.PNG' %}" alt="Image">
+                                <img class="img-fluid" src="{% static '/img/python.png' %}" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="{% static '/img/solder.JPG' %}" alt="Image">
+                                <img class="img-fluid" src="{% static '/img/solder.png' %}" alt="Image">
                             </div>
                         </div>
                     </div>
@@ -538,7 +524,6 @@
         <script src="{% static '/lib/owlcarousel/owl.carousel.min.js' %}"></script>
         <script src="{% static '/lib/isotope/isotope.pkgd.min.js' %}"></script>
         <script src="{% static '/lib/lightbox/js/lightbox.min.js' %}"></script>
-        <script src="{% static './info.js' %}"></script>
 
         <!-- Template Javascript -->
         <script src="{% static '/js/main.js' %}"></script>

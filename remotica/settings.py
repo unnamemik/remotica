@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'djoser',
     'remotica',
-    'profile'
+    'profile',
+    'diploma'
 ]
 
 MIDDLEWARE = [
@@ -140,9 +141,9 @@ LOGIN_REDIRECT_URL = '/'
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'diploma', 'static'),
-    os.path.join(BASE_DIR, 'profile', 'static'),
-    os.path.join(BASE_DIR, 'remotica', 'static')
+    os.path.join('BASE_DIR/diploma/static'),
+    os.path.join('BASE_DIR/profile/static'),
+    os.path.join('BASE_DIR/remotica/static')
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
