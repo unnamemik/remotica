@@ -67,4 +67,76 @@
     {% endblock content %}
 
     {% block testimonials %}
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <p class="section-title text-secondary justify-content-center"><span></span>Другие проекты
+                    автора<span></span></p>
+                <a href="https://github.com/unnamemik" class="text-center mb-5"><h4 style="color: rgb(0, 0, 255); text-decoration: underline">github.com/unnamemik</h4></a>
+                <div class="owl-carousel testimonial-carousel">
+                    <div class="testimonial-item bg-light rounded my-4">
+                        <a href="{% static '/storage/Arrays.exe' %}"><p class="fs-5" style="text-decoration: underline"><i class="fa fa-link fa-2x text-primary mt-n4 me-3"></i>Arrays (Python)</p></a>
+                        <div class="d-flex align-items-center">
+                            <img class="img_tooltip" src="{% static '/storage/arrays.png' %}">
+                            <div class="ps-4">
+                                <h5 class="mb-1">Все основные задачи с массивами, приложение с GUI </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-light rounded my-4">
+                        <a href="{% static '/storage/Tuskarora.exe' %}"><p class="fs-5" style="text-decoration: underline"><i class="fa fa-link fa-2x text-primary mt-n4 me-3"></i>Tuskarora (Java)</p></a>
+                        <div class="d-flex align-items-center">
+                            <img class="img_tooltip" src="{% static '/storage/tuskarora.png' %}">
+                            <div class="ps-4">
+                                <h5 class="mb-1">Программа для тестирования порта LPT (378h). Умеет слать сигналы в заданный порт с заданным интервалом.</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-light rounded my-4">
+                    <a href="{% static '/storage/Calculator.exe' %}"><p class="fs-5" style="text-decoration: underline"><i class="fa fa-link fa-2x text-primary mt-n4 me-3"></i>Calculator (Python)</p></a>
+                        <div class="d-flex align-items-center">
+                            <img class="img_tooltip" src="{% static '/storage/calculator.png' %}">
+                            <div class="ps-4">
+                                <h5 class="mb-1">Калькулятор, считает проценты и корень, учитывает скобки, ведет логи.</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-light rounded my-4">
+                        <a href="{% static '/storage/doggy.exe' %}"><p class="fs-5" style="text-decoration: underline"><i class="fa fa-link fa-2x text-primary mt-n4 me-3"></i>Doggy (C#)</p></a>
+                        <div class="d-flex align-items-center">
+                            <img class="img_tooltip" src="{% static '/storage/doggy.png' %}">
+                            <div class="ps-4">
+                                <h5 class="mb-1">Широко известная в узких кругах задача про собаку и ее друзей.</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-light rounded my-4">
+                        <a href="{% static '/storage/Messenger.rar' %}"><p class="fs-5" style="text-decoration: underline"><i class="fa fa-link fa-2x text-primary mt-n4 me-3"></i>Messenger (Python)</p></a>
+                        <div class="d-flex align-items-center">
+                            <img class="img_tooltip" src="{% static '/storage/messenger.png' %}">
+                            <div class="ps-4">
+                                <h5 class="mb-1">Мессенджер для локальных сетей. Сервер (на ведущую машину) и клиент (на остальные).</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-light rounded my-4">
+                        <a href="{% static '/storage/percent.exe' %}"><p class="fs-5" style="text-decoration: underline"><i class="fa fa-link fa-2x text-primary mt-n4 me-3"></i>Percent (C#)</p></a>
+                        <div class="d-flex align-items-center">
+                            <img class="img_tooltip" src="{% static '/storage/percent.png' %}">
+                            <div class="ps-4">
+                                <h5 class="mb-1">Простенький но нужный калькулятор расчета обратного процента.</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-light rounded my-4">
+                        <a href="{% static '/storage/Phonebook.exe' %}"><p class="fs-5" style="text-decoration: underline"><i class="fa fa-link fa-2x text-primary mt-n4 me-3"></i>Phonebook (Python)</p></a>
+                        <div class="d-flex align-items-center">
+                            <img class="img_tooltip" src="{% static '/storage/phonebook.png' %}">
+                            <div class="ps-4">
+                                <h5 class="mb-1">Телефонная книга с базой данных на SQLite.</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     {% endblock testimonials %}

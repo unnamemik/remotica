@@ -392,7 +392,7 @@ ul.leftNav li a {
 	padding: 8px 10px 8px 30px;
 	display: block;
 	border-top: 1px solid #4c545e;
-	background: url("remotica/static/img/arrow-right.png") 13px 50% no-repeat;
+	background: url("remotica/imgpng") 13px 50% no-repeat;
 }
 
 ul.leftNav li:first-child a {
