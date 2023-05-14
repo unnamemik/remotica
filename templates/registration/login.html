@@ -6,18 +6,17 @@
     {% block login %}
     {% endblock login %}
 <div class="container-xxl bg-primary hero-header">
-<div class="col-lg-6 text-center text-lg-start" style="margin-left: 100px">
+<div class="col-lg-6 text-center text-lg-start" style="margin-left: 5%">
 
 {% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
+<p>Ошибка логина/пароля. Попробуйте еще.</p>
 {% endif %}
 
 {% if next %}
     {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
+    <p>Нет доступа! Пожалуйста, пройдите авторизацию.</p>
     {% else %}
-    <h1 class="text-white mb-4 animated slideInDown">Please login to see this page.</h1>
+    <h1 class="text-white mb-4 animated slideInDown">Войдите, чтобы увидеть страницу.</h1>
     {% endif %}
 {% endif %}
 
@@ -39,7 +38,7 @@
 </form>
 <br>
 {# Assumes you setup the password_reset view in your URLconf #}
-<p><a style="width: 200px" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight" href="{% url 'password_reset' %}">Lost password?</a></p>
+<p><a style="width: 200px" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight" href="{% url 'password_reset' %}">Забыли пароль?</a></p>
 </div>
 </div>
 

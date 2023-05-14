@@ -141,14 +141,14 @@ LOGIN_REDIRECT_URL = '/'
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static', 'logo'),
-    os.path.join(BASE_DIR, 'static', 'content_img'),
-    os.path.join(BASE_DIR, 'diploma', 'static', 'diploma'),
-    os.path.join(BASE_DIR, 'profile', 'static', 'profile'),
-    os.path.join(BASE_DIR, 'remotica', 'static', 'remotica')
+    BASE_DIR/'static/',                 # for local dev, off on web
+    BASE_DIR/'diploma/static/diploma/',
+    BASE_DIR/'profile/static/profile/',
+    BASE_DIR/'remotica/static/remotica/'
 )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')    # for web dev
+STATIC_ROOT = os.path.join(BASE_DIR, '/')           # for local dev
 
 STATIC_URL = 'static/'
 

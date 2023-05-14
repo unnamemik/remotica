@@ -5,9 +5,9 @@
     <div>В процессе разработки проекта был использован следующий стек технологий:</div>
     <div class="bg-light rounded my-4">
         <div>
-            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'django_logo.png' %}">
+            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'logo/django_logo.png' %}">
             <li><b>Django:</b></li>
-            <div style="padding-left: 200px; margin-bottom: 50px">
+            <div class="techno-item">
                 Фреймворк веб сайта - он позволяет использовать Python в качестве основного языка бэкенда,
                 к тому же Django несмотря на свою простоту весьма гибкий и мощный.
             </div>
@@ -15,9 +15,9 @@
     </div>
     <div class="bg-light rounded my-4">
         <div>
-            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'python_logo.png' %}">
+            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'logo/python_logo.png' %}">
             <li><b>Python:</b></li>
-            <div style="padding-left: 200px; margin-bottom: 50px">
+            <div class="techno-item">
                 Собственно, профильный язык проекта - на нем написан функционал бэкенда и серверная часть сайта, которая
                 позволяет
                 устанавливать и поддерживать соединение с устройствами. Взаимодействие с базой данных также реализовано
@@ -29,9 +29,9 @@
 
     <div class="bg-light rounded my-4">
         <div>
-            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'assembly_logo.png' %}">
+            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'logo/assembly_logo.png' %}">
             <li><b>assembler:</b></li>
-            <div style="padding-left: 200px; margin-bottom: 50px">
+            <div class="techno-item">
                 Вернее, его С/C++ диалект для модуля-драйвера устройства (на базе Arduino), загружается в память
                 микрочипа и обеспечивает интерфейс и
                 связь с локальной сетью на стороне клиента.
@@ -40,9 +40,9 @@
     </div>
     <div class="bg-light rounded my-4">
         <div>
-            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'SQLite_logo.png' %}">
+            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'logo/SQLite_logo.png' %}">
             <li><b>SQLite:</b></li>
-            <div style="padding-left: 200px; margin-bottom: 50px">
+            <div class="techno-item">
                 В проекте использовались базы данных SQLite, ввиду небольшого масштаба данных и простоты ее
                 использования -
                 данные хранятся в одном файле. При необходимости - например, в случае прироста и усложнения проекта -
@@ -52,9 +52,9 @@
     </div>
     <div class="bg-light rounded my-4">
         <div>
-            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'html_logo.png' %}">
+            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'logo/html_logo.png' %}">
             <li><b>HTML/css/Bootstrap:</b></li>
-            <div style="padding-left: 200px; margin-bottom: 50px">
+            <div class="techno-item">
                 Внешний вид и стили веб-сайта, без этого никуда, конечно же. Был использован один из многочисленных free
                 шаблонов,
                 который был адаптирован и в значительной части модернизирован под нужды проекта. Также в проект включен
@@ -65,9 +65,9 @@
     </div>
     <div class="bg-light rounded my-4">
         <div>
-            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'js_logo.png' %}">
+            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'logo/js_logo.png' %}">
             <li><b>JavaScript:</b></li>
-            <div style="padding-left: 200px; margin-bottom: 50px">
+            <div class="techno-item">
                 Бесспорный лидер в коде на стороне клиента, помогает оживить сайт и обеспечить взаимодействие с пользователем.
                 В проекте JS создает интерфейс управления устройствами в интерактивном режиме.
             </div>
@@ -75,9 +75,9 @@
     </div>
     <div class="bg-light rounded my-4">
         <div>
-            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'nginx_logo.png' %}">
+            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'logo/nginx_logo.png' %}">
             <li><b>Nginx:</b></li>
-            <div style="padding-left: 200px; margin-bottom: 50px">
+            <div class="techno-item">
                 Поскольку вся серверная часть строится на Linux, то лучшим решением было использование Nginx. На нем построено
                 рабочее окружение Django и поддержка Python.
             </div>
@@ -85,9 +85,9 @@
     </div>
     <div class="bg-light rounded my-4">
         <div>
-            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'api_logo.png' %}">
+            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'logo/api_logo.png' %}">
             <li><b>REST API:</b></li>
-            <div style="padding-left: 200px; margin-bottom: 50px">
+            <div class="techno-item">
                 Позволяет клиентскому приложению связать серверную часть с локальными устройствами, обеспечивает устойчивую
                 и незаметную связь.
             </div>
@@ -95,9 +95,9 @@
     </div>
     <div class="bg-light rounded my-4">
         <div>
-            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'git_logo.png' %}">
+            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'logo/git_logo.png' %}">
             <li><b>GIT:</b></li>
-            <div style="padding-left: 200px; margin-bottom: 50px">
+            <div class="techno-item">
                 Лучший инструмент для версионирования и отслеживания изменений в проекте, незаменим в написании и хранении
                 сложных проектов.
             </div>
@@ -105,9 +105,9 @@
     </div>
     <div class="bg-light rounded my-4">
         <div>
-            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'ssh_logo.png' %}">
+            <img class="leftimg" style="max-width: 100px; max-height: 100px" src="{% static 'logo/ssh_logo.png' %}">
             <li><b>Библиотеки и инструменты:</b></li>
-            <div style="padding-left: 200px; margin-bottom: 50px">
+            <div class="techno-item">
                 Тут целый ряд инструментов и библиотек, имеющих вспомогательное значение, но достаточно специфичных:
                 JQuery, JSON, ftp/sftp/ssh. В качестве среды разработки был использован Pycharm IDE, а среди прочих авторских
                 проектов, ссылки на которые можно найти на страницах сайта, есть приложения на C# и Java.
