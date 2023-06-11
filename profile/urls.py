@@ -19,5 +19,5 @@ from django.urls import path, include
 from profile import views
 
 urlpatterns = [
-    path('', views.project, name='profile'),
+    path('', views.profile, name='profile'),
 ]

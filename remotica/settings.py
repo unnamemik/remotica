@@ -63,7 +63,7 @@ ROOT_URLCONF = 'remotica.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates', 'remotica/templates', 'diploma/templates', 'profile/templates'],
+        'DIRS': ['authentic/templates', 'remotica/templates', 'diploma/templates', 'profile/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,14 +134,14 @@ USE_I18N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = BASE_DIR/'profile/'
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATICFILES_DIRS = (
-    BASE_DIR/'static/',                 # for local dev, off on web
+    BASE_DIR/'static/',                             # for local dev, off on web
     BASE_DIR/'diploma/static/diploma/',
     BASE_DIR/'profile/static/profile/',
     BASE_DIR/'remotica/static/remotica/'

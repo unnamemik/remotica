@@ -1,0 +1,209 @@
+.profile_container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Стили для боксов */
+.profile_box {
+  width: 200px;
+  height: 200px;
+  background-color: #eee;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_box:last-child {
+  margin-right: 10px;
+}
+
+/* Стили для перемещаемого элемента */
+.profile_item {
+  width: 160px;
+  height: 160px;
+  background-color: rgba(0, 0, 255, 0.71);
+  cursor: pointer;
+}
+
+/* Меняем курсор при перетаскивании */
+.profile_item:active {
+  cursor: grabbing;
+}
+
+/* При перетаскивания - меняем цвет */
+.profile_item--hold {
+  background-color: rgba(41, 83, 182, 0.37);
+}
+
+/* При наведении на бокс - желтая подсветка */
+.profile_item:hover {
+  background-color: rgba(0, 0, 255, 0.58);
+}
+
+/* Перетаскивании - скрываем элемент */
+.profile_item--hide {
+  display: none;
+}
+
+
+
+.profile_wrapper {
+  width: 96%;
+  margin: 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 15px;
+}
+.profile_div {
+  background-color: #fff;
+  border: 2px solid #058bb4;
+  min-width: 130px;
+  min-height: 130px;
+  padding: 15px;
+  margin: 15px 0;
+  text-align: center;
+}
+.profile_block {
+  background-color: #10b6e9;
+}
+
+.profile_hide {
+  display: none;
+}
+.profile_hover {
+  background-color: #94e5fa;
+  position: relative;
+}
+.profile_hover::before {
+  content: "Пора уже отпускать";
+  display: block;
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  border-radius: 6px;
+  padding: 5px 10px;
+  top: -40px;
+  left: 50%;
+  transform: translate(-50%);
+  min-width: 150px;
+}
+
+/*----------------grid----------------*/
+.main_grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.main_list {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 15%;
+}
+
+.circle,
+.inner {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    box-sizing: content-box;
+}
+.circle {
+    background-color: #fff;
+    padding: 20px;
+    position: relative;
+    box-shadow: inset -20px 20px 20px rgba(0,0,0,.2), -20px 20px 30px rgba(0,0,0,.3);
+    display: inline-block;
+    margin: 20px auto;
+}
+.circle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    box-shadow: inset -2px 2px 2px #fff;
+    border-radius: 50%;
+}
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset -3px 3px 6px rgba(0, 0, 0, .3);
+    background: #337AB7; /* Фон кнопки */
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    transition: all .3s ease-in-out;
+}
+a:hover .inner {
+    background: #BFE2FF;  /* Фон кнопки при наведении */
+    color: #337AB7;
+}
+
+.reset_button {
+    background: rgba(255, 0, 30, 0.78);
+    color: rgb(255, 255, 255);
+}
+
+.reset_button:hover .inner {
+    background: rgba(255, 0, 30, 0.78);
+    color: rgb(255, 255, 255);
+}
+
+/*-------------wheel----------------*/
+.rotate-container {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	margin-top: 100px;
+}
+#rotate-shadow {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	box-shadow: 0px 6px 16px #888;
+}
+#rotate {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	box-sizing: border-box;
+	border: 2px solid #6222cc;
+	background: linear-gradient(0deg, #333, #6222cc, #333);
+}
+#rotate::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 3% auto;
+	height: 12%;
+	width: 4%;
+	border-radius: 25%;
+	background: #fba504;
+	box-shadow: 0 0 2px 0 #fba504;
+}
+#rotate-value {
+	text-align: center;
+	width: 101px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	padding: 0;
+	margin: 10px auto;
+	display: block;
+}

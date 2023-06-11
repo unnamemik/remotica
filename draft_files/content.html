@@ -1,24 +1,23 @@
 {% extends "base_generic.html" %}
 
 {% load static %}
-    {% block title %}<title>Устройства</title>{% endblock title%}
+    {% block title %}<title>Содержание</title>{% endblock title%}
 
     {% block slider %}
     {% endblock slider %}
 
-    {% block slider_small_txt_p %}<p class="text-white pb-3 animated slideInDown">Центр управления{% endblock slider_small_txt_p %}
-
+    {% block slider_small_txt_p %}<p class="text-white pb-3 animated slideInDown">Содержание дипломной работы{% endblock slider_small_txt_p %}
 
     {% block propertys %}
         <div class="container-xxl py-5">
             <div class="container py-5 px-lg-5">
                 <div class="row g-4">
-                       <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="feature-item bg-light rounded text-center p-4">
-                            <a href="{% url 'techno' %}">
-                                <i class="fa fa-3x fa-sharp fa-solid fa-microchip text-primary mb-4"></i>
-                                <h5 class="mb-3">Технологии</h5>
-                                <p class="m-0">Подробнее о ключевых технологиях, использованных в проекте</p></a>
+                            <a href="{% url 'structure' %}">
+                                <i class="fa fa-3x fa-regular fa-sitemap text-primary mb-4"></i>
+                                <h5 class="mb-3">Обзор проекта</h5>
+                                <p class="m-0">Содержание</p></a>
                         </div>
                     </div>
                 </div>

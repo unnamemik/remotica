@@ -3,5 +3,5 @@ from django.shortcuts import render
 # Create your views here.
 
 @login_required
-def project(request):
-    return render(request, 'project.html')
+def profile(request):
+    return render(request, 'profile.html')
