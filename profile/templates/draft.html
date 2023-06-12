@@ -1,4 +1,44 @@
-const main = document.querySelector("main");
+<!DOCTYPE html>
+
+<body><h1>Drag & Drop</h1>
+<main class="row">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Введите команду и перетащите кнопку на пульт: </span>
+        </div>
+        <input type="text" class="form-control" placeholder="Кнопка" data-name="todo-input" />
+        <div class="input-group-append">
+            <button class="btn btn-success" data-name="add-btn">Добавить</button>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <h3>Команды</h3>
+        <ul class="list-group" data-name="todos-list">
+            <!--            <li class="list-group-item" data-id="1" draggable="true">-->
+            <!--                <p></p>-->
+            <!--                <button class="btn btn-outline-danger btn-sm" data-name="remove-btn">-->
+            <!--                    X-->
+            <!--                </button>-->
+            <!--            </li>-->
+        </ul>
+    </div>
+
+    <div class="col-4">
+        <h3>Пульт управления</h3>
+        <ul class="list-group" data-name="in-progress-list"></ul>
+    </div>
+
+    <!--    <div class="col-4">-->
+    <!--        <h3>Completed</h3>-->
+    <!--        <ul class="list-group" data-name="completed-list"></ul>-->
+    <!--    </div>-->
+</main>
+</body>
+
+
+<script type="text/javascript">
+    const main = document.querySelector("main");
 
     main.addEventListener("click", (e) => {
         if (e.target.tagName === "BUTTON") {
@@ -10,6 +50,7 @@ const main = document.querySelector("main");
                     const template = `
         <li class="list-group-item" draggable="true" data-id="${Date.now()}">
           <p>${value}</p>
+          <button class="btn btn-outline-danger btn-sm" data-name="rename-btn">R</button>
           <button class="btn btn-outline-danger btn-sm" data-name="remove-btn">X</button>
         </li>
         `;
@@ -17,9 +58,12 @@ const main = document.querySelector("main");
                     todosList.insertAdjacentHTML("beforeend", template);
                     todoInput.value = "";
                 }
-            } else if (name === "remove-btn") {
+            }   else if (name === "remove-btn") {
                 e.target.parentElement.remove();
             }
+
+        } if (name === "rename-btn") {
+            e.target.parentElement.textContent = prompt('Введите команду для кнопки: ');
         }
     });
 
@@ -92,10 +136,11 @@ const main = document.querySelector("main");
                 if (todo.classList.contains("in-progress")) {
                     todo.classList.remove("in-progress");
                 }
-                let but_command = prompt('Введите команду для кнопки: ');
-                todo.textContent = but_command;
-                todo.classList.add("completed");
-            } else if (name === "in-progress-list") {
+                // let but_command = prompt('Введите команду для кнопки: ');
+                // todo.textContent = but_command;
+                // todo.classList.add("completed");
+            } else
+            if (name === "in-progress-list") {
                 if (todo.classList.contains("completed")) {
                     todo.classList.remove("completed");
                 }
@@ -106,73 +151,4 @@ const main = document.querySelector("main");
         }
     });
 
-
-// -----------------------wheel---------------------------
-
-(function(){
-	var init, rotate, start, stop, active = false,
-	angle = 0,
-	rotation = 0,
-	startAngle = 0,
-	center = {x: 0,y: 0},
-	R2D = 180 / Math.PI,
-	rot = document.getElementById('rotate');
-
-	init = function() {
-		rot.addEventListener("mousedown", start, false);
-		$(document).bind('mousemove', function(event) {
-			if (active === true) {
-				event.preventDefault();
-				rotate(event);
-			}
-		});
-		$(document).bind('mouseup', function(event) {
-			event.preventDefault();
-			stop(event);
-		});
-	};
-
-	start = function(e) {
-		e.preventDefault();
-		var bb = this.getBoundingClientRect(),
-		t = bb.top,
-		l = bb.left,
-		h = bb.height,
-		w = bb.width,
-		x, y;
-		center = {x: l + (w / 2), y: t + (h / 2)};
-		x = e.clientX - center.x;
-		y = e.clientY - center.y;
-		startAngle = R2D * Math.atan2(y, x);
-		return active = true;
-	};
-
-	rotate = function(e) {
-		e.preventDefault();
-		var x = e.clientX - center.x,
-		y = e.clientY - center.y,
-		d = R2D * Math.atan2(y, x);
-		rotation = d - startAngle;
-
-		let val = angle + rotation % 360;
-		if (val < 0) {
-			val = 360 + val;
-		}
-		val = (val / 360) * 300;
-		if (val > 255) {
-			$('#rotate-value').val(0);
-		}else{
-			$('#rotate-value').val(Math.round(val));
-		}
-
-		return rot.style.transform = "rotate(" + (angle + rotation) + "deg)";
-	};
-
-	stop = function() {
-		angle += rotation;
-		return active = false;
-	};
-
-	init();
-
-}).call(this);
+</script>

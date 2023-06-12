@@ -8,133 +8,42 @@
 
 
     {% block propertys %}
-{#        <div class="container-xxl py-5">#}
-{#            <div class="container py-5 px-lg-5">#}
-{#                <div class="row g-4">#}
-{#                       <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">#}
-{#                        <div class="feature-item bg-light rounded text-center p-4">#}
-{#                            <a href="{% url 'techno' %}">#}
-{#                                <i class="fa fa-3x fa-sharp fa-solid fa-microchip text-primary mb-4"></i>#}
-{#                                <h5 class="mb-3">Технологии</h5>#}
-{#                                <p class="m-0">Подробнее о ключевых технологиях, использованных в проекте</p></a>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
 
-<p class="text-black-50 pb-3 animated slideInDown">Центр управления</p>
+<h3>Профиль устройства</h3>
 
-
-<div class=" profile_wrapper">
-    <div class="main_grid">
-        <div class='profile_box profile_div'></div>
-        <div class='profile_box profile_div'></div>
-        <div class='profile_box profile_div'></div>
-        <div class='profile_box profile_div'></div>
-        <div class='profile_box profile_div'></div>
-        <div class='profile_box profile_div'></div>
-        <div class='profile_box profile_div'></div>
-        <div class='profile_box profile_div'></div>
-        <div class='profile_box profile_div'></div>
-
-        <div></div>
-        <div class="rotate-container">
-            <div id="rotate-shadow">
-                <div id="rotate"></div>
-            </div>
-            <div>
-                <input type="text" id="rotate-value" value="0">
+<main class="profile_row">
+    <div class="profile_col">
+        <h4>------------------------------</h4>
+        <ul class="list-group" data-name="todos-list"></ul>
+    </div>
+    <div class="profile_col">
+        <h4>Список команд</h4>
+        <ul class="list-group" data-name="todos-list"></ul>
+    </div>
+    <div class="profile_col">
+        <h4>------------------------------</h4>
+        <ul class="list-group" data-name="todos-list"></ul>
+    </div>
+    <div class="profile_input-group">
+        <div class="input-group-append">
+            <div class="input-group-text">Введите команду для новой кнопки</div>
+            <input type="text" class="form-control" placeholder=">_" data-name="todo-input" />
+        </div>
+        <div class="input-group-append">
+            <button class="btn btn-success" data-name="add-btn">Добавить</button>
+            <div class="rotate-container">
+                <div id="rotate-shadow">
+                    <div id="rotate"></div>
+                </div>
+                <div>
+                    <input type="text" id="rotate-value" value="0">
+                </div>
             </div>
         </div>
-        <div></div>
-
     </div>
 
-    <div class="main_list">
-            <div class='profile_box profile_div'>
-                <a href="#">
-                    <div class="profile_block circle profile_item" onclick="btn_name('button1')" draggable="true">
-                        <div class="inner" id="button1">
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class='profile_box profile_div'>
-                <a href="#">
-                    <div class="profile_block circle profile_item" onclick="btn_name('button2')" draggable="true">
-                        <div class="inner" id="button2">
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class='profile_box profile_div'>
-                <a href="#">
-                    <div class="profile_block circle profile_item" onclick="btn_name('button3')" draggable="true">
-                        <div class="inner" id="button3">
-                        </div>
-                    </div>
-                </a>
-            </div>
-        <div class='profile_box profile_div'>
-                <a href="#">
-                    <div class="profile_block circle profile_item" onclick="btn_name('button4')" draggable="true">
-                        <div class="inner" id="button4">
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class='profile_box profile_div'>
-                <a href="#">
-                    <div class="profile_block circle profile_item" onclick="btn_name('button5')" draggable="true">
-                        <div class="inner" id="button5">
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class='profile_box profile_div'>
-                <a href="#">
-                    <div class="profile_block circle profile_item" onclick="btn_name('button6')" draggable="true">
-                        <div class="inner" id="button6">
-                        </div>
-                    </div>
-                </a>
-            </div>
-        <div class='profile_box profile_div'>
-                <a href="#">
-                    <div class="profile_block circle profile_item" onclick="btn_name('button7')" draggable="true">
-                        <div class="inner" id="button7">
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class='profile_box profile_div'>
-                <a href="#">
-                    <div class="profile_block circle profile_item" onclick="btn_name('button8')" draggable="true">
-                        <div class="inner" id="button8">
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class='profile_box profile_div'>
-                <a href="#">
-                    <div class="profile_block circle profile_item" onclick="btn_name('button9')" draggable="true">
-                        <div class="inner" id="button9">
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class='profile_box profile_div'>
-                <a href="#">
-                    <div class="profile_block circle profile_item reset_button">
-                        <div class="inner" id="button10">
-                            RESET
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-</div>
+</main>
+
 
     {% endblock propertys %}
 

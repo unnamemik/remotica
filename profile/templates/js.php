@@ -1,4 +1,116 @@
-const main = document.querySelector("main");
+<!DOCTYPE html>
+<head>
+    <style type="text/css">
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #222;
+        }
+
+        main {
+            max-width: 600px;
+        }
+
+        .input-group {
+            margin: 1rem;
+        }
+
+        .list-group {
+            min-height: 100px;
+            height: 100%;
+        }
+
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        div + div {
+            border-right: 1px dotted #222;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .completed p {
+            text-decoration: line-through;
+        }
+
+        .in-progress p {
+            border-bottom: 1px dashed #222;
+        }
+
+        .drop {
+            background: linear-gradient(#eee, transparent);
+            border-radius: 4px;
+        }
+
+    </style>
+
+
+
+</head>
+<body><h1>Drag & Drop</h1>
+<main class="row">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Enter new todo: </span>
+        </div>
+        <input type="text" class="form-control" placeholder="todo4" data-name="todo-input" />
+        <div class="input-group-append">
+            <button class="btn btn-success" data-name="add-btn">Add</button>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <h3>Todos</h3>
+        <ul class="list-group" data-name="todos-list">
+            <li class="list-group-item" data-id="1" draggable="true">
+                <p>todo1</p>
+                <button class="btn btn-outline-danger btn-sm" data-name="remove-btn">
+                    X
+                </button>
+            </li>
+            <li class="list-group-item" data-id="2" draggable="true">
+                <p>todo2</p>
+                <button class="btn btn-outline-danger btn-sm" data-name="remove-btn">
+                    X
+                </button>
+            </li>
+            <li class="list-group-item" data-id="3" draggable="true">
+                <p>todo3</p>
+                <button class="btn btn-outline-danger btn-sm" data-name="remove-btn">
+                    X
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-4">
+        <h3>In Progress</h3>
+        <ul class="list-group" data-name="in-progress-list"></ul>
+    </div>
+
+    <div class="col-4">
+        <h3>Completed</h3>
+        <ul class="list-group" data-name="completed-list"></ul>
+    </div>
+</main>
+</body>
+</html>
+
+
+<script type="text/javascript">
+    const main = document.querySelector("main");
 
     main.addEventListener("click", (e) => {
         if (e.target.tagName === "BUTTON") {
@@ -106,73 +218,4 @@ const main = document.querySelector("main");
         }
     });
 
-
-// -----------------------wheel---------------------------
-
-(function(){
-	var init, rotate, start, stop, active = false,
-	angle = 0,
-	rotation = 0,
-	startAngle = 0,
-	center = {x: 0,y: 0},
-	R2D = 180 / Math.PI,
-	rot = document.getElementById('rotate');
-
-	init = function() {
-		rot.addEventListener("mousedown", start, false);
-		$(document).bind('mousemove', function(event) {
-			if (active === true) {
-				event.preventDefault();
-				rotate(event);
-			}
-		});
-		$(document).bind('mouseup', function(event) {
-			event.preventDefault();
-			stop(event);
-		});
-	};
-
-	start = function(e) {
-		e.preventDefault();
-		var bb = this.getBoundingClientRect(),
-		t = bb.top,
-		l = bb.left,
-		h = bb.height,
-		w = bb.width,
-		x, y;
-		center = {x: l + (w / 2), y: t + (h / 2)};
-		x = e.clientX - center.x;
-		y = e.clientY - center.y;
-		startAngle = R2D * Math.atan2(y, x);
-		return active = true;
-	};
-
-	rotate = function(e) {
-		e.preventDefault();
-		var x = e.clientX - center.x,
-		y = e.clientY - center.y,
-		d = R2D * Math.atan2(y, x);
-		rotation = d - startAngle;
-
-		let val = angle + rotation % 360;
-		if (val < 0) {
-			val = 360 + val;
-		}
-		val = (val / 360) * 300;
-		if (val > 255) {
-			$('#rotate-value').val(0);
-		}else{
-			$('#rotate-value').val(Math.round(val));
-		}
-
-		return rot.style.transform = "rotate(" + (angle + rotation) + "deg)";
-	};
-
-	stop = function() {
-		angle += rotation;
-		return active = false;
-	};
-
-	init();
-
-}).call(this);
+</script>
