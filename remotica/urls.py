@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from remotica import views
-from service import start_server
+# from service import tcp_server_receiver
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -26,7 +26,7 @@ urlpatterns = [
     path('authentic/', include('djoser.urls')),
     path('authentic/', include('djoser.urls.authtoken')),
     path('postuser/', views.postuser),
-    path('start/', start_server.start_server),
+    # path('start/', tcp_server_receiver),
     path('accounts/', include('django.contrib.auth.urls')),
     path('content/', views.content, name='content'),
     path('about/', views.about, name='about'),

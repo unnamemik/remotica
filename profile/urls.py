@@ -20,4 +20,5 @@ from profile import views
 
 urlpatterns = [
     path('', views.profile, name='profile'),
+    path('<com>/', views.commands, name='commands'),
 ]

@@ -1,27 +1,60 @@
+window.base_url = 'http://127.0.0.1/profile/'    // 'https://firstprojects.ru/profile/'
+class VariableNameSet {
+    constructor(variableName) {
+        window[this.variableName] = variableName;
+    }
+}
+
 const main = document.querySelector("main");
 
     main.addEventListener("click", (e) => {
         if (e.target.tagName === "BUTTON") {
             const { name } = e.target.dataset;
             if (name === "add-btn") {
-                const todoInput = main.querySelector('[data-name="todo-input"]');
-                if (todoInput.value.trim() !== "") {
-                    const value = todoInput.value;
+                const profileInput = main.querySelector('[data-name="profile-input"]');
+                if (profileInput.value.trim() !== "") {
+                    const value = profileInput.value;
                     const template = `
+        
         <li class="list-group-item" draggable="true" data-id="${Date.now()}">
-          <p>${value}</p>
+<!--          <p>${value}</p>-->
+          <button class="btn btn-outline-success btn-sm" data-name="action-btn">${value}</button>
           <button class="btn btn-outline-danger btn-sm" data-name="remove-btn">X</button>
         </li>
         `;
-                    const todosList = main.querySelector('[data-name="todos-list"]');
-                    todosList.insertAdjacentHTML("beforeend", template);
-                    todoInput.value = "";
+                    const profileList = main.querySelector('[data-name="profile-list"]');
+                    profileList.insertAdjacentHTML("beforeend", template);
+                    profileInput.value = "";
                 }
             } else if (name === "remove-btn") {
                 e.target.parentElement.remove();
             }
+            else if (name === "action-btn") {
+                VariableNameSet.variableName = e.target.parentElement.innerText.substring(0, e.target.parentElement.innerText.length-2);
+                window.btn_val = VariableNameSet.variableName
+                alert(btn_val);
+
+                const postData = async (url = '', data = {}) => {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Access-Control-Allow-Origin': '*'
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    return response;
+                }
+                let cur_url = base_url + btn_val;
+                postData(cur_url, { answer: btn_val })
+                    .then((data) => {
+                        console.log(data);
+                    });
+            }
         }
     });
+
+
 
     main.addEventListener("dragenter", (e) => {
         if (e.target.classList.contains("list-group")) {
@@ -50,11 +83,11 @@ const main = document.querySelector("main");
     });
 
     main.addEventListener("drop", (e) => {
-        const todo = main.querySelector(
+        const action = main.querySelector(
             `[data-id="${e.dataTransfer.getData("text/plain")}"]`
         );
 
-        if (elemBelow === todo) {
+        if (elemBelow === action) {
             return;
         }
 
@@ -75,12 +108,12 @@ const main = document.querySelector("main");
                 }
             }
 
-            elemBelow.parentElement.insertBefore(todo, elemBelow);
-            todo.className = elemBelow.className;
+            elemBelow.parentElement.insertBefore(action, elemBelow);
+            action.className = elemBelow.className;
         }
 
         if (e.target.classList.contains("list-group")) {
-            e.target.append(todo);
+            e.target.append(action);
 
             if (e.target.classList.contains("drop")) {
                 e.target.classList.remove("drop");
@@ -89,19 +122,19 @@ const main = document.querySelector("main");
             const { name } = e.target.dataset;
 
             if (name === "completed-list") {
-                if (todo.classList.contains("in-progress")) {
-                    todo.classList.remove("in-progress");
+                if (action.classList.contains("in-progress")) {
+                    action.classList.remove("in-progress");
                 }
                 let but_command = prompt('Введите команду для кнопки: ');
-                todo.textContent = but_command;
-                todo.classList.add("completed");
+                action.textContent = but_command;
+                action.classList.add("completed");
             } else if (name === "in-progress-list") {
-                if (todo.classList.contains("completed")) {
-                    todo.classList.remove("completed");
+                if (action.classList.contains("completed")) {
+                    action.classList.remove("completed");
                 }
-                todo.classList.add("in-progress");
+                action.classList.add("in-progress");
             } else {
-                todo.className = "list-group-item";
+                action.className = "list-group-item";
             }
         }
     });

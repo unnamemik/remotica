@@ -54,6 +54,11 @@ h3, h4{
     border-radius: 4px;
 }
 
+.btn-outline-success{
+	width: -webkit-fill-available;
+}
+
+
 /*!*-------------wheel----------------*!*/
 .rotate-container {
 	width: 200px;
