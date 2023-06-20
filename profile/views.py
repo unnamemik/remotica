@@ -4,6 +4,11 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from service.server_const import client_host, client_port
+from service.server_starter import server_starter, Thr1, Thr2
+
+
+
 # Create your views here.
 
 @login_required
@@ -13,10 +18,9 @@ def profile(request):
 
 @login_required
 def commands(request, com):
-    host = '192.168.0.107'
-    port = 33443
-    addr = (host, port)
+    server_starter()
 
+    addr = (client_host, client_port)
     tcp_socket = socket(AF_INET, SOCK_STREAM)
     tcp_socket.connect(addr)
 
@@ -26,9 +30,6 @@ def commands(request, com):
 
     data = str.encode(data)
     tcp_socket.send(data)
-    # data = bytes.decode(data)
-    # data = tcp_socket.recv(1024)
-    # print(data)
 
     tcp_socket.close()
     return HttpResponse(f'Command = {com}')

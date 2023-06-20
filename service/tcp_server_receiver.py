@@ -1,8 +1,9 @@
 from socketserver import *
 
-host = '192.168.0.107'
-port = 33443
-addr = (host, port)
+from service.server_const import receiver_host, receiver_port
+
+addr = (receiver_host, receiver_port)
+global server
 
 
 class MyTCPHandler(StreamRequestHandler):
@@ -14,15 +15,21 @@ class MyTCPHandler(StreamRequestHandler):
         with open("exchange", "r") as file:
             print("received: ", file.read())
         self.request.sendall(b'replay')
-        # self.server_stop()
 
-    @staticmethod
-    def server_stop():
+    def server_stop(self):
         server.server_close()
         server.shutdown()
 
 
+def starter():
+    global server
+    try:
+        server = TCPServer(addr, MyTCPHandler)
+        print('receiver started...')
+        server.serve_forever()
+    except:
+        print('receiver restarted!')
+
+
 if __name__ == "__main__":
-    server = TCPServer(addr, MyTCPHandler)
-    print('starting server...')
-    server.serve_forever()
+    starter()

@@ -1,8 +1,9 @@
 from socketserver import *
 
-host = '192.168.0.107'
-port = 33444
-addr = (host, port)
+from service.server_const import sender_host, sender_port
+
+addr = (sender_host, sender_port)
+global server
 
 
 class MyTCPHandler(StreamRequestHandler):
@@ -13,7 +14,6 @@ class MyTCPHandler(StreamRequestHandler):
             replay_data = file.read()[2:-1]
             print("send: ", replay_data)
             self.request.sendall(replay_data.encode())
-            # self.server_stop()
 
     @staticmethod
     def server_stop():
@@ -21,8 +21,15 @@ class MyTCPHandler(StreamRequestHandler):
         server.shutdown()
 
 
-if __name__ == "__main__":
-    server = TCPServer(addr, MyTCPHandler)
+def starter():
+    global server
+    try:
+        server = TCPServer(addr, MyTCPHandler)
+        print('sender started...')
+        server.serve_forever()
+    except:
+        print('sender restarted!')
 
-    print('starting server...')
-    server.serve_forever()
+
+if __name__ == "__main__":
+    starter()
