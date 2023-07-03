@@ -13,9 +13,5 @@ def postuser(request):
     return HttpResponse(f"<h2>Command: {command}   Token: {token}</h2>")
 
 
-@login_required
-def content(request):
-    return render(request, 'content.html')
-
 def about(request):
     return render(request, 'about.html')

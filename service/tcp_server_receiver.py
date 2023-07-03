@@ -3,7 +3,7 @@ from socketserver import *
 from service.server_const import receiver_host, receiver_port
 
 addr = (receiver_host, receiver_port)
-global server
+global rec_server
 
 
 class MyTCPHandler(StreamRequestHandler):
@@ -14,19 +14,19 @@ class MyTCPHandler(StreamRequestHandler):
             file.write(str(self.data))
         with open("exchange", "r") as file:
             print("received: ", file.read())
-        self.request.sendall(b'replay')
+        # self.request.sendall(b'replay')
 
     def server_stop(self):
-        server.server_close()
-        server.shutdown()
+        rec_server.server_close()
+        rec_server.shutdown()
 
 
 def starter():
-    global server
+    global rec_server
     try:
-        server = TCPServer(addr, MyTCPHandler)
+        rec_server = TCPServer(addr, MyTCPHandler)
         print('receiver started...')
-        server.serve_forever()
+        rec_server.serve_forever()
     except:
         print('receiver restarted!')
 

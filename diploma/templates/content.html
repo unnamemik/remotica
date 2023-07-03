@@ -1,0 +1,32 @@
+{% extends "base_generic.html" %}
+
+{% load static %}
+    {% block title %}<title>Содержание проекта</title>{% endblock title%}
+
+    {% block slider %}
+    {% endblock slider %}
+
+    {% block slider_small_txt_p %}<p class="text-white pb-3 animated slideInDown">Содержание дипломного проекта{% endblock slider_small_txt_p %}
+
+    {% block about %}
+    {% endblock about %}
+
+    {% block facts %}
+    {% endblock facts %}
+
+    {% block content %}
+    {% endblock content %}
+
+    {% block testimonials %}
+    {% endblock testimonials %}
+
+    {% block propertys %}
+        <div class="container py-5 px-lg-5">
+            <div style="padding-left: 30px; margin-bottom: 50px">
+                <a href={% static 'diploma.docx' %}><u>Скачать файл дипломной работы</u></a>
+            </div>
+        </div>
+        <div class="diploma_chapters_normal diploma_text" style="text-indent: 50px">
+           {% include  'diploma.html' %}
+        </div>
+    {% endblock propertys %}

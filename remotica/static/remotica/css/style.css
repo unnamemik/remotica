@@ -214,12 +214,12 @@ h6,
     margin-bottom: 6rem;
     padding: 8rem 0;
     background:
-        url(blob-top-left.png),
-        url(blob-top-right.png),
-        url(blob-bottom-left.png),
-        url(blob-bottom-right.png),
-        url(blob-center.png),
-        url(bg-bottom.png);
+        url(../img/blob-top-left.png),
+        url(../img/blob-top-right.png),
+        url(../img/blob-bottom-left.png),
+        url(../img/blob-bottom-right.png),
+        url(../img/blob-center.png),
+        url(../img/bg-bottom.png);
     background-position:
         left 0 top 0,
         right 0 top 0,
@@ -322,11 +322,11 @@ h6,
 .fact {
     margin: 6rem 0;
     background:
-        url(blob-top-left.png),
-        url(blob-top-right.png),
-        url(blob-bottom-left.png),
-        url(blob-bottom-right.png),
-        url(blob-center.png);
+        url(../img/blob-top-left.png),
+        url(../img/blob-top-right.png),
+        url(../img/blob-bottom-left.png),
+        url(../img/blob-bottom-right.png),
+        url(../img/blob-center.png);
     background-position:
         left 0px top 0px,
         right 0px top 0px,
@@ -360,14 +360,14 @@ h6,
     align-items: center;
     justify-content: center;
     color: var(--light);
-    background: url(blob-primary.png) center center no-repeat;
+    background: url(../img/blob-primary.png) center center no-repeat;
     background-size: contain;
     transition: .5s;
 }
 
 .service-item:hover .service-icon {
     color: var(--dark);
-    background: url(blob-secondary.png) center center no-repeat;
+    background: url(../img/blob-secondary.png) center center no-repeat;
     background-size: contain;
 }
 
@@ -450,11 +450,11 @@ h6,
 .newsletter {
     margin: 6rem 0;
     background:
-        url(blob-top-left.png),
-        url(blob-top-right.png),
-        url(blob-bottom-left.png),
-        url(blob-bottom-right.png),
-        url(blob-center.png);
+        url(../img/blob-top-left.png),
+        url(../img/blob-top-right.png),
+        url(../img/blob-bottom-left.png),
+        url(../img/blob-bottom-right.png),
+        url(../img/blob-center.png);
     background-position:
         left 0px top 0px,
         right 0px top 0px,
@@ -516,8 +516,8 @@ h6,
     margin-top: 6rem;
     padding-top: 9rem;
     background:
-        url(bg-top.png),
-        url(map.png);
+        url(../img/bg-top.png),
+        url(../img/map.png);
     background-position:
         center top,
         center center;
@@ -635,3 +635,28 @@ margin: 7px 0 7px 7px;
     width: 150px !important;
     height: 150px !important
 }
+
+.techno-item {
+    padding-left: 10%;
+    margin-bottom: 50px
+}
+
+@media screen and (max-width: 450px) {
+    .techno-item {
+        padding-left: 0;
+        margin-bottom: 30px
+    }
+    .container-xxl {
+        overflow-x: hidden;
+    }
+    .diploma_chapters_normal {
+        font-size: 14px;
+        width: 97%;
+        margin: 5px;
+    }
+    h5 {
+        font-size: 10px;
+    }
+}
+
+

@@ -636,14 +636,27 @@ margin: 7px 0 7px 7px;
     height: 150px !important
 }
 
-@media (min-width: 576px) {
-    .techno-item {
-        padding-left: 0;
-        margin-bottom: 30px
-    }
-}
-
 .techno-item {
     padding-left: 10%;
     margin-bottom: 50px
 }
+
+@media screen and (max-width: 450px) {
+    .techno-item {
+        padding-left: 0;
+        margin-bottom: 30px
+    }
+    .container-xxl {
+        overflow-x: hidden;
+    }
+    .diploma_chapters_normal {
+        font-size: 14px;
+        width: 97%;
+        margin: 5px;
+    }
+    h5 {
+        font-size: 10px;
+    }
+}
+
+

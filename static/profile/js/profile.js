@@ -194,6 +194,22 @@ const main = document.querySelector("main");
 			$('#rotate-value').val(0);
 		}else{
 			$('#rotate-value').val(Math.round(val));
+			let PWM_data = (Math.round(val));
+            ////////////////////////////////////////////
+            const postData = async (url = '', data = {}) => {
+                    return await fetch(url, {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    });
+                }
+                let cur_url = base_url + PWM_data + '/';
+                postData(cur_url, { answer: PWM_data })
+                    .then((PWM_data) => {
+                        console.log(PWM_data);
+                    });
+            ///////////////////////////////////////////
 		}
 
 		return rot.style.transform = "rotate(" + (angle + rotation) + "deg)";

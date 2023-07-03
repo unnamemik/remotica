@@ -3,7 +3,7 @@ from socketserver import *
 from service.server_const import sender_host, sender_port
 
 addr = (sender_host, sender_port)
-global server
+global send_server
 
 
 class MyTCPHandler(StreamRequestHandler):
@@ -17,16 +17,16 @@ class MyTCPHandler(StreamRequestHandler):
 
     @staticmethod
     def server_stop():
-        server.server_close()
-        server.shutdown()
+        send_server.server_close()
+        send_server.shutdown()
 
 
 def starter():
-    global server
+    global send_server
     try:
-        server = TCPServer(addr, MyTCPHandler)
+        send_server = TCPServer(addr, MyTCPHandler)
         print('sender started...')
-        server.serve_forever()
+        send_server.serve_forever()
     except:
         print('sender restarted!')
 

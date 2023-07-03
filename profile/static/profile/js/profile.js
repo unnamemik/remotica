@@ -1,4 +1,4 @@
-window.base_url = 'http://127.0.0.1/profile/'    // 'https://firstprojects.ru/profile/'
+window.base_url = 'http://127.0.0.1:8000/profile/'    // 'https://firstprojects.ru/profile/'
 class VariableNameSet {
     constructor(variableName) {
         window[this.variableName] = variableName;
@@ -32,20 +32,18 @@ const main = document.querySelector("main");
             else if (name === "action-btn") {
                 VariableNameSet.variableName = e.target.parentElement.innerText.substring(0, e.target.parentElement.innerText.length-2);
                 window.btn_val = VariableNameSet.variableName
-                alert(btn_val);
+                // alert(btn_val);
 
                 const postData = async (url = '', data = {}) => {
-                    const response = await fetch(url, {
-                        method: 'POST',
+                    return await fetch(url, {
+                        method: 'GET',
                         headers: {
                             'Content-Type': 'application/json',
-                            'Access-Control-Allow-Origin': '*'
+                            // 'Access-Control-Allow-Origin': '*',
                         },
-                        body: JSON.stringify(data)
                     });
-                    return response;
                 }
-                let cur_url = base_url + btn_val;
+                let cur_url = base_url + btn_val + '/';
                 postData(cur_url, { answer: btn_val })
                     .then((data) => {
                         console.log(data);
@@ -196,6 +194,22 @@ const main = document.querySelector("main");
 			$('#rotate-value').val(0);
 		}else{
 			$('#rotate-value').val(Math.round(val));
+			let PWM_data = (Math.round(val));
+            ////////////////////////////////////////////
+            const postData = async (url = '', data = {}) => {
+                    return await fetch(url, {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    });
+                }
+                let cur_url = base_url + PWM_data + '/';
+                postData(cur_url, { answer: PWM_data })
+                    .then((PWM_data) => {
+                        console.log(PWM_data);
+                    });
+            ///////////////////////////////////////////
 		}
 
 		return rot.style.transform = "rotate(" + (angle + rotation) + "deg)";
