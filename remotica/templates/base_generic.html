@@ -10,7 +10,7 @@
         {% block keywords %}
             <meta content="" name="keywords">{% endblock keywords %}
         {% block description %}
-            <meta content="" name="description">{% endblock description %}
+            <meta content="Дипломный проект: Управление устройствами по сети с применением пользовательского программирования" name="description">{% endblock description %}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -70,7 +70,7 @@
                                 <span>User: {{ user.get_username }}</span> -
                                 <span><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a></span>
                             {% else %}
-                                <a href="{% url 'login' %}?next={{ request.path }}">Login</a>
+                                <a href="{% url 'login' %}?next={% url 'profile' %}">Login</a>
                             {% endif %}
                         </div>
                     {% endblock login %}
