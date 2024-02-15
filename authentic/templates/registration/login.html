@@ -1,0 +1,69 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block slider %}
+
+    {% block login %}
+    {% endblock login %}
+<div class="container-xxl bg-primary hero-header">
+<div class="col-lg-6 text-center text-lg-start" style="margin-left: 5%">
+
+{% if form.errors %}
+<p>Ошибка логина/пароля. Попробуйте еще.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Нет доступа! Пожалуйста, пройдите авторизацию.</p>
+    {% else %}
+    <h1 class="text-white mb-4 animated slideInDown">Войдите, чтобы увидеть страницу.</h1>
+    {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+<table class="text-white pb-3 animated slideInDown" style="border-collapse: separate; border-spacing: 10px 10px">
+<tr>
+    <td>{{ form.username.label_tag }}</td>
+    <td>{{ form.username }}</td>
+</tr>
+<tr>
+    <td>{{ form.password.label_tag }}</td>
+    <td>{{ form.password }}</td>
+</tr>
+</table>
+<br>
+<input style="width: 200px" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft" type="submit" value="login">
+<input style="width: 200px" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight" type="hidden" name="next" value="{{ next }}">
+</form>
+<br>
+{# Assumes you setup the password_reset view in your URLconf #}
+<p><a style="width: 200px" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight" href="{% url 'password_reset' %}">Забыли пароль?</a></p>
+</div>
+</div>
+
+ {% block future %}
+    {% endblock future %}
+
+    {% block slider_small %}
+    {% endblock slider_small %}
+
+    {% block about %}
+    {% endblock about %}
+
+    {% block facts %}
+    {% endblock facts %}
+
+    {% block content %}
+    {% endblock content %}
+
+    {% block testimonials %}
+    {% endblock testimonials %}
+
+    {% block footer %}
+    {% endblock footer %}
+
+    {% block back_to_top %}
+    {% endblock back_to_top %}
+
+{% endblock slider%}

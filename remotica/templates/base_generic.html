@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="ru">
 
 {% block head %}
     <head>
@@ -13,7 +13,7 @@
             <meta content="Дипломный проект: Управление устройствами по сети с применением пользовательского программирования" name="description">{% endblock description %}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="robots" content="index, follow"/>
      <!-- Add additional CSS in static file -->
 
         <link rel="stylesheet" href="{% static '/css/style.css' %}">
@@ -51,7 +51,7 @@
             <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="{% url 'index' %}" class="navbar-brand p-0">
-                    <h1 class="m-0"><span>First</span><span style="color: #FBA504">Projects</span>.ru</h1>
+                    <div class="title" style="font-size: 2.5rem; font-weight: 700"><span>First</span><span style="color: #FBA504">Projects</span>.ru</div>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarCollapse">
@@ -84,14 +84,17 @@
                     <div class="row g-5 align-items-end">
                         <div class="col-lg-6 text-center text-lg-start">
                             {% block slider_txt_h1 %}<h1 class="text-white mb-4 animated slideInDown">Дипломная работа</h1>{% endblock slider_txt_h1 %}
-                            {% block slider_txt_p %}<p class="text-white pb-3 animated slideInDown">Управление устройствами по сети с
-                                применением пользовательского программирования</p>{% endblock slider_txt_p %}
+                            {% block slider_txt_p %}<p class="text-white pb-3 animated slideInDown"><h2 style="color: #ffffff">Управление устройствами по сети с
+                                применением пользовательского программирования</h2>{% endblock slider_txt_p %}
+                        <div style="display: flex; gap: 10px; padding-bottom: 25px;">
                             <a href="{% url 'diploma' %}"
-                               class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Содержание
+                               class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft" style="max-height: 55px;">Содержание
                                 работы</a>
                             <a href="{% url 'profile' %}"
-                               class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Профиль
+                               class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight" style="max-height: 55px;">Профиль
                                 управления</a>
+                        </div>
+
                         </div>
                         <div class="col-lg-6 text-center text-lg-start">
                             <img class="img-fluid animated zoomIn" src="{% static '/img/hero.png' %}" alt="">
@@ -107,8 +110,8 @@
                 <div class="container px-lg-5">
                     <div class="row g-5 align-items-end">
                         <div class="col-lg-6 text-center text-lg-start">
-                            <p class="text-white pb-3 animated slideInDown">Управление устройствами по сети с
-                            применением пользовательского программирования</p>
+                            <h2 class="text-white pb-3 animated slideInDown" style="font-size: 26px; padding: 50px 0 !important;">Управление устройствами по сети с
+                            применением пользовательского программирования</h2>
                         </div>
                     </div>
                 </div>
@@ -127,7 +130,7 @@
                         <div class="feature-item bg-light rounded text-center p-4">
                             <a href="{% url 'structure' %}">
                                 <i class="fa fa-3x fa-regular fa-sitemap text-primary mb-4"></i>
-                                <h5 class="mb-3">Обзор проекта</h5>
+                                <h3 class="mb-3">Обзор проекта</h3>
                                 <p class="m-0">Структура проекта и краткое содержание</p></a>
                         </div>
                     </div>
@@ -135,7 +138,7 @@
                         <div class="feature-item bg-light rounded text-center p-4">
                             <a href="{% url 'techno' %}">
                                 <i class="fa fa-3x fa-sharp fa-solid fa-microchip text-primary mb-4"></i>
-                                <h5 class="mb-3">Технологии</h5>
+                                <h3 class="mb-3">Технологии</h3>
                                 <p class="m-0">Подробнее о ключевых технологиях, использованных в проекте</p></a>
                         </div>
                     </div>
@@ -143,7 +146,7 @@
                         <div class="feature-item bg-light rounded text-center p-4">
                             <a href="{% url 'files' %}">
                                 <i class="fa fa-3x fa-solid fa-download text-primary mb-4"></i>
-                                <h5 class="mb-3">Файлы и ссылки</h5>
+                                <h3 class="mb-3">Файлы и ссылки</h3>
                                 <p class="m-0">Программное обеспечение и ссылки на источники</p></a>
                         </div>
                     </div>
@@ -159,7 +162,7 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                         <p class="section-title text-secondary">Прогресс<span></span></p>
-                        <h1 class="mb-5">Стадия выполнения дипломной работы</h1>
+                        <h2 class="mb-5">Стадия выполнения дипломной работы</h2>
                         <p class="mb-4">Общее состояние готовности проекта на текущий момент</p>
                         <div class="skill mb-4">
                             <div class="d-flex justify-content-between">
@@ -212,22 +215,22 @@
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
                         <i class="fa fa-solid fa-chart-bar fa-3x text-secondary mb-3"></i>
-                        <h1 class="text-white mb-2" data-toggle="counter-up">30972</h1>
+                        <p class="text-white mb-2" style="font-size: 32px" data-toggle="counter-up">30972</p>
                         <p class="text-white mb-0">Написано строк в проекте</p>
                     </div>
                     <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
                         <i class="fa fa-solid fa-laptop-code fa-3x text-secondary mb-3"></i>
-                        <h1 class="text-white mb-2" data-toggle="counter-up">718</h1>
+                        <p class="text-white mb-2" style="font-size: 32px" data-toggle="counter-up">718</p>
                         <p class="text-white mb-0">Написано строк python</p>
                     </div>
                     <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
                         <i class="fa fa-solid fa-file-word fa-3x text-secondary mb-3"></i>
-                        <h1 class="text-white mb-2" data-toggle="counter-up">1264</h1>
+                        <p class="text-white mb-2" style="font-size: 32px" data-toggle="counter-up">1264</p>
                         <p class="text-white mb-0">Написано строк диплома</p>
                     </div>
                     <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
                         <i class="fa fa-calendar-check fa-3x text-secondary mb-3"></i>
-                        <h1 class="text-white mb-2" data-toggle="counter-up">60</h1>
+                        <p class="text-white mb-2" style="font-size: 32px" data-toggle="counter-up">60</p>
                         <p class="text-white mb-0">Дней на проект</p>
                     </div>
                 </div>
@@ -240,7 +243,7 @@
             <div class="container py-5 px-lg-5">
                 <div class="wow fadeInUp" data-wow-delay="0.1s">
                     <p class="section-title text-secondary justify-content-center"><span></span>Галерея<span></span></p>
-                    <h1 class="text-center mb-5">Как создавался проект</h1>
+                    <h2 class="text-center mb-5">Как создавался проект</h2>
                 </div>
                 <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="col-12 text-center">
@@ -261,13 +264,8 @@
                                     <a class="btn btn-square btn-outline-light mx-1"
                                        href="{% static '/img/auto.png' %}" data-bs-target="portfolio" target="_blank"><i
                                             class="fa fa-eye"></i></a>
-{#                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>#}
                                 </div>
                             </div>
-{#                            <div class="bg-light p-4">#}
-{#                                <p class="text-primary fw-medium mb-2">Фото</p>#}
-{#                                <h5 class="lh-base mb-0">----------------------------------</h5>#}
-{#                            </div>#}
                         </div>
                     </div>
 
@@ -276,16 +274,9 @@
                             <div class="position-relative overflow-hidden">
                                 <img class="img-fluid w-100" src="{% static '/img/arduino.png' %}" alt="">
                                 <div class="portfolio-overlay">
-{#                                    <a class="btn btn-square btn-outline-light mx-1"#}
-{#                                       href="{% static '/img/start.mp4' %}" data-bs-target="portfolio"><i#}
-{#                                            class="fa fa-eye"></i></a>#}
                                     <a class="btn btn-square btn-outline-light mx-1" href="{% static '/img/arduino_clip.mp4' %}" target="_blank"><i class="fa fa-link"></i></a>
                                 </div>
                             </div>
-{#                            <div class="bg-light p-4">#}
-{#                                <p class="text-primary fw-medium mb-2">Видео</p>#}
-{#                                <h5 class="lh-base mb-0">----------------------------------</h5>#}
-{#                            </div>#}
                         </div>
                     </div>
 
@@ -297,13 +288,8 @@
                                     <a class="btn btn-square btn-outline-light mx-1"
                                        href="{% static '/img/nano.png' %}" data-bs-target="portfolio" target="_blank"><i
                                             class="fa fa-eye"></i></a>
-{#                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>#}
                                 </div>
                             </div>
-{#                            <div class="bg-light p-4">#}
-{#                                <p class="text-primary fw-medium mb-2">Фото</p>#}
-{#                                <h5 class="lh-base mb-0">----------------------------------</h5>#}
-{#                            </div>#}
                         </div>
                     </div>
 
@@ -312,16 +298,9 @@
                             <div class="position-relative overflow-hidden">
                                 <img class="img-fluid w-100" src="{% static '/img/python.png' %}" alt="">
                                 <div class="portfolio-overlay">
-{#                                    <a class="btn btn-square btn-outline-light mx-1"#}
-{#                                       href="{% static '/img/python.mp4' %}" data-bs-target="portfolio"><i#}
-{#                                            class="fa fa-eye"></i></a>#}
                                     <a class="btn btn-square btn-outline-light mx-1" href="{% static '/img/python_clip.mp4' %}" target="_blank"><i class="fa fa-link"></i></a>
                                 </div>
                             </div>
-{#                            <div class="bg-light p-4">#}
-{#                                <p class="text-primary fw-medium mb-2">Видео</p>#}
-{#                                <h5 class="lh-base mb-0">----------------------------------</h5>#}
-{#                            </div>#}
                         </div>
                     </div>
 
@@ -333,13 +312,8 @@
                                     <a class="btn btn-square btn-outline-light mx-1"
                                        href="{% static '/img/solder.png' %}" data-bs-target="portfolio" target="_blank"><i
                                             class="fa fa-eye"></i></a>
-{#                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>#}
                                 </div>
                             </div>
-{#                            <div class="bg-light p-4">#}
-{#                                <p class="text-primary fw-medium mb-2">Фото</p>#}
-{#                                <h5 class="lh-base mb-0">----------------------------------</h5>#}
-{#                            </div>#}
                         </div>
                     </div>
 
@@ -351,13 +325,8 @@
                                     <a class="btn btn-square btn-outline-light mx-1"
                                        href="{% static '/img/pages.png' %}" data-bs-target="portfolio" target="_blank">
                                        <i class="fa fa-eye"></i></a>
-{#                                    <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>#}
                                 </div>
                             </div>
-{#                            <div class="bg-light p-4">#}
-{#                                <p class="text-primary fw-medium mb-2">Видео</p>#}
-{#                                <h5 class="lh-base mb-0">----------------------------------</h5>#}
-{#                            </div>#}
                         </div>
                     </div>
                 </div>
@@ -370,7 +339,7 @@
             <div class="container py-5 px-lg-5">
                 <p class="section-title text-secondary justify-content-center"><span></span>Другие проекты
                     автора<span></span></p>
-                <a href="https://github.com/unnamemik" class="text-center mb-5"><h4 style="color: rgb(0, 0, 255); text-decoration: underline">github.com/unnamemik</h4></a>
+                <a href="https://github.com/unnamemik" class="text-center mb-5"><p style="color: rgb(0, 0, 255); text-decoration: underline">github.com/unnamemik</p></a>
                 <div class="owl-carousel testimonial-carousel">
                     <div class="testimonial-item bg-light rounded my-4">
                         <a href="{% static '/storage/Arrays.exe' %}"><p class="fs-5" style="text-decoration: underline"><i class="fa fa-link fa-2x text-primary mt-n4 me-3"></i>Arrays (Python)</p></a>
@@ -388,7 +357,7 @@
                                 </div>
                             </div>
                             <div class="ps-4">
-                                <h5 class="mb-1">Все основные задачи с массивами, приложение с GUI </h5>
+                                <p class="mb-1">Все основные задачи с массивами, приложение с GUI </p>
                             </div>
                         </div>
                     </div>
@@ -408,7 +377,7 @@
                                 </div>
                             </div>
                             <div class="ps-4">
-                                <h5 class="mb-1">Программа для тестирования порта LPT (378h). Умеет посылать сигналы в заданный порт с заданным интервалом.</h5>
+                                <p class="mb-1">Программа для тестирования порта LPT (378h). Умеет посылать сигналы в заданный порт с заданным интервалом.</p>
                             </div>
                         </div>
                     </div>
@@ -428,7 +397,7 @@
                                 </div>
                             </div>
                             <div class="ps-4">
-                                <h5 class="mb-1">Калькулятор, считает проценты и корень, учитывает скобки, ведет логи.</h5>
+                                <p class="mb-1">Калькулятор, считает проценты и корень, учитывает скобки, ведет логи.</p>
                             </div>
                         </div>
                     </div>
@@ -448,7 +417,7 @@
                                 </div>
                             </div>
                             <div class="ps-4">
-                                <h5 class="mb-1">Широко известная в узких кругах задача про собаку и ее друзей.</h5>
+                                <p class="mb-1">Широко известная в узких кругах задача про собаку и ее друзей.</p>
                             </div>
                         </div>
                     </div>
@@ -468,7 +437,7 @@
                                 </div>
                             </div>
                             <div class="ps-4">
-                                <h5 class="mb-1">Мессенджер для локальных сетей. Сервер (на ведущую машину) и клиент (на остальные).</h5>
+                                <p class="mb-1">Мессенджер для локальных сетей. Сервер (на ведущую машину) и клиент (на остальные).</p>
                             </div>
                         </div>
                     </div>
@@ -488,7 +457,7 @@
                                 </div>
                             </div>
                             <div class="ps-4">
-                                <h5 class="mb-1">Простенький но нужный калькулятор расчета обратного процента.</h5>
+                                <p class="mb-1">Простенький но нужный калькулятор расчета обратного процента.</p>
                             </div>
                         </div>
                     </div>
@@ -508,7 +477,7 @@
                                 </div>
                             </div>
                             <div class="ps-4">
-                                <h5 class="mb-1">Телефонная книга с базой данных на SQLite.</h5>
+                                <p class="mb-1">Телефонная книга с базой данных на SQLite.</p>
                             </div>
                         </div>
                     </div>
@@ -568,11 +537,13 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">FirstProjects.ru</a>, All Right Reserved.
+                            <ul style="list-style: none">
+                                <li>&copy; <a class="border-bottom" href="#">FirstProjects.ru</a>, All Right Reserved.</li>
 
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                            Powered By <a class="border-bottom" href="https://github.com/unnamemik">unnamemik</a>
+                                <li>Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a></li>
+                                <li>Powered By <a class="border-bottom" href="https://github.com/unnamemik">unnamemik</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>

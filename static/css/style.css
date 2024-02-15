@@ -104,8 +104,8 @@ h6,
     margin-right: 25px;
     padding: 35px 0;
     font-family: 'Calibri', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 700;
     color: var(--light) !important;
     outline: none;
     transition: .5s;
@@ -116,6 +116,7 @@ h6,
     color: var(--dark) !important;
 }
 
+
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
     color: var(--secondary) !important;
@@ -123,6 +124,10 @@ h6,
 
 .navbar-light .navbar-brand h1 {
     color: #FFFFFF;
+}
+
+.navbar-light .navbar-brand .title {
+    color: #ffffff;
 }
 
 .navbar-light .navbar-brand img {
@@ -136,7 +141,8 @@ h6,
 
 @media (max-width: 991.98px) {
     .sticky-top.navbar-light {
-        position: relative;
+        width: 100%;
+        position: fixed;
         background: #FFFFFF;
     }
 
@@ -154,6 +160,10 @@ h6,
 
     .navbar-light .navbar-brand h1 {
         color: var(--primary);
+    }
+
+    .navbar-light .navbar-brand .title {
+        color: #6222CCFF;
     }
 
     .navbar-light .navbar-brand img {
@@ -178,6 +188,10 @@ h6,
 
     .sticky-top.navbar-light .navbar-brand h1 {
         color: var(--primary);
+    }
+
+    .sticky-top.navbar-light .navbar-brand .title {
+        color: #6222CCFF;
     }
 
     .navbar-light .navbar-nav .nav-item .dropdown-menu {
@@ -299,6 +313,7 @@ h6,
 
 /*** Feature ***/
 .feature-item {
+    min-height: 230px;
     transition: .5s;
 }
 

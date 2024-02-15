@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /?*
+Disallow: /authentic/
+Disallow: /postuser/
+Disallow: /profile/
+Disallow: /accounts/
+Disallow: /admin/
+Disallow: /structure-mobile/
+Disallow: /techno-mobile/
+Disallow: /files-mobile/
+
+User-agent: GPTBot
+Disallow: /
